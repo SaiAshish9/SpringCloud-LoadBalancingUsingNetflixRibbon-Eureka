@@ -11,7 +11,7 @@ public class ShoppingController {
     @Autowired
     private RestTemplate template;
 
-    @GetMapping("/amazon-payment/{priceß}")
+    @GetMapping("/amazon-payment/{price}")
     public String invokePaymentService(@PathVariable int price) {
         String url = "http://PAYMENT-SERVICE/payment-provider/payNow/" + price;
         return template.getForObject(url, String.class);
